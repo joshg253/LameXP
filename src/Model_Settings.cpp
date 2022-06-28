@@ -368,7 +368,7 @@ SettingsModel::SettingsModel(void)
 			const QString legacyGroupName = QString::fromLatin1(LEGACY_GROUPS[i]);
 			if (childGroups.contains(legacyGroupName))
 			{
-				qWarning("Importing legay settings: %s -> %s", MUTILS_UTF8(legacyGroupName), MUTILS_UTF8(groupKey));
+				qWarning("Importing legacy settings: %s -> %s", MUTILS_UTF8(legacyGroupName), MUTILS_UTF8(groupKey));
 				configFile->beginGroup(legacyGroupName);
 				const QStringList existingKeys = configFile->allKeys();
 				configFile->endGroup();
@@ -528,7 +528,7 @@ QString SettingsModel::defaultLanguage(void) const
 		return *m_defaultLanguage;
 	}
 
-	//Detect system langauge
+	//Detect system language
 	QLocale systemLanguage= QLocale::system();
 	qDebug("[Locale]");
 	qDebug("Language: %s (%d)", MUTILS_UTF8(QLocale::languageToString(systemLanguage.language())), systemLanguage.language());

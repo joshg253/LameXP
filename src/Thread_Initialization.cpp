@@ -343,12 +343,12 @@ void InitializationThread::run(void)
 	catch(const std::exception &error)
 	{
 		MUTILS_PRINT_ERROR("\nGURU MEDITATION !!!\n\nException error:\n%s\n", error.what());
-		MUtils::OS::fatal_exit(L"Unhandeled C++ exception error, application will exit!");
+		MUtils::OS::fatal_exit(L"Unhandled C++ exception error, application will exit!");
 	}
 	catch(...)
 	{
 		MUTILS_PRINT_ERROR("\nGURU MEDITATION !!!\n\nUnknown exception error!\n");
-		MUtils::OS::fatal_exit(L"Unhandeled C++ exception error, application will exit!");
+		MUtils::OS::fatal_exit(L"Unhandled C++ exception error, application will exit!");
 	}
 }
 
@@ -472,7 +472,7 @@ double InitializationThread::doInit(const size_t threadCount)
 		qFatal("Checksum queues *not* empty fater verification completed. Take care!");
 	}
 
-	//Wait for extrator threads to finish
+	//Wait for extractor threads to finish
 	pool->waitForDone();
 
 	//Performance measure
@@ -504,7 +504,7 @@ double InitializationThread::doInit(const size_t threadCount)
 	if(delayExtract > g_allowedExtractDelay)
 	{
 		m_slowIndicator = true;
-		qWarning("Extracting tools took %.3f seconds -> probably slow realtime virus scanner.", delayExtract);
+		qWarning("Extracting tools took %.3f seconds -> probably slow real-time virus scanner.", delayExtract);
 		qWarning("Please report performance problems to your anti-virus developer !!!\n");
 	}
 	else
@@ -662,7 +662,7 @@ void InitAacEncTask::initAacEncImpl(const char *const toolName, const char *cons
 	}
 	catch(...)
 	{
-		qWarning("Failed to get excluive lock to encoder binary -> %s support will be disabled!", toolName);
+		qWarning("Failed to get exclusive lock to encoder binary -> %s support will be disabled!", toolName);
 		return;
 	}
 

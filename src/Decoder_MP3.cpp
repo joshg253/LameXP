@@ -52,7 +52,7 @@ MP3Decoder::MP3Decoder(void)
 {
 	if (m_binary.isEmpty())
 	{
-		MUTILS_THROW("Error initializing MPG123 decoder. Tool 'mpg123.exe' is not registred!");
+		MUTILS_THROW("Error initializing MPG123 decoder. Tool 'mpg123.exe' is not registered!");
 	}
 }
 

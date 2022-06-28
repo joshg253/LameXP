@@ -40,7 +40,7 @@ MusepackDecoder::MusepackDecoder(void)
 {
 	if(m_binary.isEmpty())
 	{
-		MUTILS_THROW("Error initializing Musepack decoder. Tool 'mpcdec.exe' is not registred!");
+		MUTILS_THROW("Error initializing Musepack decoder. Tool 'mpcdec.exe' is not registered!");
 	}
 }
 

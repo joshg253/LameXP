@@ -143,7 +143,7 @@ MP3Encoder::MP3Encoder(void)
 {
 	if(m_binary.isEmpty())
 	{
-		MUTILS_THROW("Error initializing MP3 encoder. Tool 'lame.exe' is not registred!");
+		MUTILS_THROW("Error initializing MP3 encoder. Tool 'lame.exe' is not registered!");
 	}
 	
 	m_algorithmQuality = 2;

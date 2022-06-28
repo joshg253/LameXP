@@ -40,7 +40,7 @@ ToneAdjustFilter::ToneAdjustFilter(int bass, int treble)
 {
 	if(m_binary.isEmpty())
 	{
-		MUTILS_THROW("Error initializing SoX filter. Tool 'sox.exe' is not registred!");
+		MUTILS_THROW("Error initializing SoX filter. Tool 'sox.exe' is not registered!");
 	}
 
 	m_bass = qMax(-2000, qMin(2000, bass));

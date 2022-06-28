@@ -38,7 +38,7 @@ ProgressModel::ProgressModel(void)
 	m_iconSkipped(":/icons/step_over.png"),
 	m_iconUndefined(":/icons/report.png"),
 	m_emptyUuid(0x00000000, 0x0000, 0x0000, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00),
-	m_emptyList("Oups, no data available!")
+	m_emptyList("Oops, no data available!")
 {
 }
 

@@ -150,10 +150,10 @@ void FileAnalyzer::run()
 	//Wait for pending tasks to complete
 	m_pool->waitForDone();
 
-	//Was opertaion aborted?
+	//Was operation aborted?
 	if(MUTILS_BOOLIFY(m_bAborted))
 	{
-		qWarning("Operation cancelled by user!");
+		qWarning("Operation canceled by user!");
 		return;
 	}
 	
@@ -177,7 +177,7 @@ void FileAnalyzer::run()
 }
 
 ////////////////////////////////////////////////////////////
-// Privtae Functions
+// Private Functions
 ////////////////////////////////////////////////////////////
 
 bool FileAnalyzer::analyzeNextFile(void)

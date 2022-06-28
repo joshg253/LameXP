@@ -27,7 +27,7 @@
 //Class declarations
 class QIcon;
 
-//UIC forward declartion
+//UIC forward declaration
 namespace Ui {
 	class LogViewDialog;
 }

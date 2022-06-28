@@ -44,7 +44,7 @@ OpusDecoder::OpusDecoder(void)
 {
 	if(m_binary.isEmpty())
 	{
-		MUTILS_THROW("Error initializing Opus decoder. Tool 'opusdec.exe' is not registred!");
+		MUTILS_THROW("Error initializing Opus decoder. Tool 'opusdec.exe' is not registered!");
 	}
 }
 

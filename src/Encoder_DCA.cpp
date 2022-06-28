@@ -133,7 +133,7 @@ DCAEncoder::DCAEncoder(void)
 {
 	if(m_binary.isEmpty())
 	{
-		MUTILS_THROW("Error initializing DCA encoder. Tool 'dcaenc.exe' is not registred!");
+		MUTILS_THROW("Error initializing DCA encoder. Tool 'dcaenc.exe' is not registered!");
 	}
 }
 

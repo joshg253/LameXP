@@ -41,7 +41,7 @@ WMADecoder::WMADecoder(void)
 {
 	if(m_binary.isEmpty())
 	{
-		MUTILS_THROW("Error initializing WMA decoder. Tool 'wma2wav.exe' is not registred!");
+		MUTILS_THROW("Error initializing WMA decoder. Tool 'wma2wav.exe' is not registered!");
 	}
 }
 

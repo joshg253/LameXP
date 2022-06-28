@@ -205,7 +205,7 @@ int CueImportDialog::exec(void)
 	int iResult = m_model->loadCueSheet(m_cueFileName, QApplication::instance(), codec);
 	if(iResult != CueSheetModel::ErrorSuccess)
 	{
-		QString errorMsg = tr("An unknown error has occured!");
+		QString errorMsg = tr("An unknown error has occurred!");
 		
 		switch(iResult)
 		{
@@ -314,7 +314,7 @@ void CueImportDialog::importButtonClicked(void)
 	{
 		if(currentFreeDiskspace < (oneGigabyte * minimumFreeDiskspaceMultiplier))
 		{
-			QMessageBox::warning(this, tr("Low Diskspace Warning"), QString("<nobr>%1</nobr><br><nobr>%2</nobr>").arg(tr("There are less than %1 GB of free diskspace available in the selected output directory.").arg(QString::number(minimumFreeDiskspaceMultiplier)), tr("It is highly recommend to free up more diskspace before proceeding with the import!")));
+			QMessageBox::warning(this, tr("Low Disk Space Warning"), QString("<nobr>%1</nobr><br><nobr>%2</nobr>").arg(tr("There are less than %1 GB of free disk space available in the selected output directory.").arg(QString::number(minimumFreeDiskspaceMultiplier)), tr("It is highly recommend to free up more disk space before proceeding with the import!")));
 			return;
 		}
 	}
@@ -372,7 +372,7 @@ void CueImportDialog::importCueSheet(void)
 		}
 	}
 
-	//Process all avialble input files
+	//Process all available input files
 	if(files.count() > 0)
 	{
 		//Analyze all source files first
@@ -443,7 +443,7 @@ void CueImportDialog::splitFiles(void)
 	}
 	else if(!splitter->getSuccess())
 	{
-		QMessageBox::warning(this, tr("Cue Sheet Error"), tr("An unexpected error has occured while splitting the Cue Sheet!"));
+		QMessageBox::warning(this, tr("Cue Sheet Error"), tr("An unexpected error has occurred while splitting the Cue Sheet!"));
 	}
 	else
 	{

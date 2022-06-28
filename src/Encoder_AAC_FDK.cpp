@@ -138,7 +138,7 @@ FDKAACEncoder::FDKAACEncoder(void)
 {
 	if(m_binary.isEmpty())
 	{
-		MUTILS_THROW("Error initializing FDKAAC. Tool 'fdkaac.exe' is not registred!");
+		MUTILS_THROW("Error initializing FDKAAC. Tool 'fdkaac.exe' is not registered!");
 	}
 
 	m_configProfile = 0;

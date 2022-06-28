@@ -297,7 +297,7 @@ void UpdateDialog::threadStatusChanged(const int status)
 		ui->statusLabel->setText(tr("Initializing, please wait..."));
 		break;
 	case MUtils::UpdateChecker::UpdateStatus_CheckingConnection:
-		ui->statusLabel->setText(tr("Testing your internet connection, please wait..."));
+		ui->statusLabel->setText(tr("Testing your Internet connection, please wait..."));
 		break;
 	case MUtils::UpdateChecker::UpdateStatus_FetchingUpdates:
 		ui->statusLabel->setText(tr("Checking for new updates online, please wait..."));
@@ -319,22 +319,22 @@ void UpdateDialog::threadStatusChanged(const int status)
 		break;
 	case MUtils::UpdateChecker::UpdateStatus_ErrorNoConnection:
 		ui->statusLabel->setText(tr("It appears that the computer currently is offline!"));
-		SHOW_HINT(tr("Please make sure your computer is connected to the internet and try again."), m_iconNetworkError);
+		SHOW_HINT(tr("Please make sure your computer is connected to the Internet and try again."), m_iconNetworkError);
 		UPDATE_TASKBAR(MUtils::Taskbar7::TASKBAR_STATE_NORMAL, m_iconFailure);
 		break;
 	case MUtils::UpdateChecker::UpdateStatus_ErrorConnectionTestFailed:
 		ui->statusLabel->setText(tr("Network connectivity test has failed!"));
-		SHOW_HINT(tr("Please make sure your computer is connected to the internet and try again."), m_iconNetworkError);
+		SHOW_HINT(tr("Please make sure your computer is connected to the Internet and try again."), m_iconNetworkError);
 		UPDATE_TASKBAR(MUtils::Taskbar7::TASKBAR_STATE_NORMAL, m_iconFailure);
 		break;
 	case MUtils::UpdateChecker::UpdateStatus_ErrorFetchUpdateInfo:
 		ui->statusLabel->setText(tr("Failed to fetch update information from server!"));
-		SHOW_HINT(tr("Sorry, the update server might be busy at this time. Plase try again later."), m_iconNetworkError);
+		SHOW_HINT(tr("Sorry, the update server might be busy at this time. Please try again later."), m_iconNetworkError);
 		UPDATE_TASKBAR(MUtils::Taskbar7::TASKBAR_STATE_NORMAL, m_iconFailure);
 		break;
 	case MUtils::UpdateChecker::UpdateStatus_CancelledByUser:
-		ui->statusLabel->setText(tr("Update check has been cancelled!"));
-		SHOW_HINT(tr("The update check has been cancelled by the user. Please try again later."), m_iconServerError);
+		ui->statusLabel->setText(tr("Update check has been canceled!"));
+		SHOW_HINT(tr("The update check has been canceled by the user. Please try again later."), m_iconServerError);
 		UPDATE_TASKBAR(MUtils::Taskbar7::TASKBAR_STATE_NORMAL, m_iconFailure);
 		break;
 	default:
@@ -451,7 +451,7 @@ void UpdateDialog::applyUpdate(void)
 
 		if(updateStarted && (process.exitCode() == 0))
 		{
-			ui->statusLabel->setText(tr("Update ready to install. Applicaion will quit..."));
+			ui->statusLabel->setText(tr("Update ready to install. Application will quit..."));
 			m_updateReadyToInstall = true;
 			m_taskbar->setTaskbarState(MUtils::Taskbar7::TASKBAR_STATE_NONE);
 			m_taskbar->setOverlayIcon(NULL);

@@ -244,7 +244,7 @@ void CueSplitter::handleUpdate(int /*progress*/)
 }
 
 ////////////////////////////////////////////////////////////
-// Privtae Functions
+// Private Functions
 ////////////////////////////////////////////////////////////
 
 void CueSplitter::splitFile(const QString &output, const int trackNo, const QString &file, const double offset, const double length, const AudioFileModel_MetaInfo &metaInfo, const int baseProgress)

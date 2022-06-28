@@ -47,7 +47,7 @@ AACDecoder::AACDecoder(void)
 {
 	if(m_binary.isEmpty())
 	{
-		MUTILS_THROW("Error initializing AAC decoder. Tool 'faad.exe' is not registred!");
+		MUTILS_THROW("Error initializing AAC decoder. Tool 'faad.exe' is not registered!");
 	}
 }
 

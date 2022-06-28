@@ -39,7 +39,7 @@ SpeexDecoder::SpeexDecoder(void)
 {
 	if(m_binary.isEmpty())
 	{
-		MUTILS_THROW("Error initializing Speex decoder. Tool 'speexdec.exe' is not registred!");
+		MUTILS_THROW("Error initializing Speex decoder. Tool 'speexdec.exe' is not registered!");
 	}
 }
 

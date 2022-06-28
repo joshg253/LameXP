@@ -24,7 +24,7 @@
 
 #include <QDialog>
 
-//UIC forward declartion
+//UIC forward declaration
 namespace Ui {
 	class AboutDialog;
 }

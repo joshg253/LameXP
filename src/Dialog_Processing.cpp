@@ -275,7 +275,7 @@ ProcessingDialog::ProcessingDialog(FileListModel *const fileListModel, const Aud
 		m_fileExts->importItems(m_settings->renameFiles_fileExtension());
 	}
 
-	//Enque jobs
+	//Enqueue jobs
 	if(fileListModel)
 	{
 		for(int i = 0; i < fileListModel->rowCount(); i++)

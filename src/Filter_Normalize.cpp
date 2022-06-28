@@ -49,7 +49,7 @@ NormalizeFilter::NormalizeFilter(const int &peakVolume, const bool &dnyAudNorm, 
 {
 	if(m_binary.isEmpty())
 	{
-		MUTILS_THROW("Error initializing SoX filter. Tool 'sox.exe' is not registred!");
+		MUTILS_THROW("Error initializing SoX filter. Tool 'sox.exe' is not registered!");
 	}
 }
 

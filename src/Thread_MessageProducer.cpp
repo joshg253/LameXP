@@ -78,7 +78,7 @@ void MessageProducerThread::run()
 		return;
 	}
 
-	//Send file to "matser" instance
+	//Send file to "master" instance
 	foreach(const QString &value, arguments.values("add"))
 	{
 		if(!value.isEmpty())

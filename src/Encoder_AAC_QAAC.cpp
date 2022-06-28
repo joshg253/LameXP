@@ -146,7 +146,7 @@ QAACEncoder::QAACEncoder(void)
 {
 	if(m_binary_qaac32.isEmpty() && m_binary_qaac64.isEmpty())
 	{
-		MUTILS_THROW("Error initializing QAAC. Tool 'qaac.exe' is not registred!");
+		MUTILS_THROW("Error initializing QAAC. Tool 'qaac.exe' is not registered!");
 	}
 
 	m_configProfile = 0;

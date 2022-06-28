@@ -136,7 +136,7 @@ FHGAACEncoder::FHGAACEncoder(void)
 {
 	if(m_binary_enc.isEmpty() || m_binary_dll.isEmpty())
 	{
-		MUTILS_THROW("Error initializing FhgAacEnc. Tool 'fhgaacenc.exe' is not registred!");
+		MUTILS_THROW("Error initializing FhgAacEnc. Tool 'fhgaacenc.exe' is not registered!");
 	}
 
 	m_configProfile = 0;

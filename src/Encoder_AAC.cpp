@@ -135,7 +135,7 @@ AACEncoder::AACEncoder(void)
 {
 	if(m_binary_enc.isEmpty() || m_binary_tag.isEmpty())
 	{
-		MUTILS_THROW("Error initializing AAC encoder. Tool 'neroAacEnc.exe' is not registred!");
+		MUTILS_THROW("Error initializing AAC encoder. Tool 'neroAacEnc.exe' is not registered!");
 	}
 
 	m_configProfile = 0;

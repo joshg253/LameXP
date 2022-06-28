@@ -175,7 +175,7 @@ AbstractEncoder *EncoderRegistry::createInstance(const int encoderId, const Sett
 	//Sanity checking
 	if(!encoder)
 	{
-		MUTILS_THROW("No encoder instance has been assigend!");
+		MUTILS_THROW("No encoder instance has been assigned!");
 	}
 
 	//Apply common settings
@@ -220,7 +220,7 @@ const AbstractEncoderInfo *EncoderRegistry::getEncoderInfo(const int encoderId)
 	//Sanity checking
 	if(!info)
 	{
-		MUTILS_THROW("No encoder instance has been assigend!");
+		MUTILS_THROW("No encoder instance has been assigned!");
 	}
 
 	return info;

@@ -53,13 +53,13 @@ enum lamexp_shutdownFlag_t
 	SHUTDOWN_FLAG_HIBERNATE = 2
 };
 
-//UIC forward declartion
+//UIC forward declaration
 namespace Ui
 {
 	class ProcessingDialog;
 }
 
-//MUtils forward declartion
+//MUtils forward declaration
 namespace MUtils
 {
 	class Taskbar7;

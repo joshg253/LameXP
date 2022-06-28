@@ -915,7 +915,7 @@ void AboutDialog::initLicenseTab(void)
 	}
 	else
 	{
-		licenseText += QString("<font color=\"darkred\">Oups, failed to load license text. Please refer to:</font><br>");
+		licenseText += QString("<font color=\"darkred\">Oops, failed to load license text. Please refer to:</font><br>");
 		licenseText += LINK("http://www.gnu.org/licenses/gpl-2.0.html");
 	}
 

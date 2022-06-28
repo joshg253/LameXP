@@ -47,7 +47,7 @@
 #include "ShellIntegration.h"
 #include "CustomEventFilter.h"
 
-//Mutils includes
+//MUtils includes
 #include <MUtils/Global.h>
 #include <MUtils/OSSupport.h>
 #include <MUtils/GUI.h>
@@ -892,7 +892,7 @@ void MainWindow::addFolder(const QString &path, bool recursive, bool delayed, QS
 	{
 		if(MUtils::OS::check_key_state_esc())
 		{
-			qWarning("Operation cancelled by user!");
+			qWarning("Operation canceled by user!");
 			MUtils::Sound::beep(MUtils::Sound::BEEP_ERR);
 			fileList.clear();
 			break;
@@ -997,7 +997,7 @@ void MainWindow::refreshFavorites(void)
 }
 
 /*
- * Initilaize translation
+ * Initialize translation
  */
 void MainWindow::initializeTranslation(void)
 {
@@ -1069,7 +1069,7 @@ void MainWindow::openDocumentLink(QAction *const action)
 		return;
 	}
 
-	//Try to open exitsing document file
+	//Try to open existing document file
 	const QFileInfo document(action->data().toString());
 	if(document.exists() && document.isFile() && (document.size() >= 1024))
 	{
@@ -1283,7 +1283,7 @@ void MainWindow::changeEvent(QEvent *e)
 		}
 	}
 
-	//Force tabe page change
+	//Force tab page change
 	tabPageChanged(ui->tabWidget->currentIndex(), true);
 }
 
@@ -1726,7 +1726,7 @@ void MainWindow::showAnnounceBox(void)
 }
 
 // =========================================================
-// Main button solots
+// Main button slots
 // =========================================================
 
 /*
@@ -1767,12 +1767,12 @@ void MainWindow::encodeButtonClicked(void)
 			PLAY_SOUND_OPTIONAL("whammy", false);
 			QString lowDiskspaceMsg = QString("%1<br>%2<br><br>%3<br>%4<br>").arg
 			(
-				tr("There are less than %1 GB of free diskspace available on your system's TEMP folder.").arg(QString::number(minimumFreeDiskspaceMultiplier)),
-				tr("It is highly recommend to free up more diskspace before proceeding with the encode!"),
+				tr("There are less than %1 GB of free disk space available on your system's TEMP folder.").arg(QString::number(minimumFreeDiskspaceMultiplier)),
+				tr("It is highly recommend to free up more disk space before proceeding with the encode!"),
 				tr("Your TEMP folder is located at:"),
 				QString("<tt>%1</tt>").arg(FSLINK(tempFolderParts.join("\\")))
 			);
-			switch(QMessageBox::warning(this, tr("Low Diskspace Warning"), NOBREAK(lowDiskspaceMsg), tr("Abort Encoding Process"), tr("Clean Disk Now"), tr("Ignore")))
+			switch(QMessageBox::warning(this, tr("Low Disk Space Warning"), NOBREAK(lowDiskspaceMsg), tr("Abort Encoding Process"), tr("Clean Disk Now"), tr("Ignore")))
 			{
 			case 1:
 				QProcess::startDetached(QString("%1/cleanmgr.exe").arg(MUtils::OS::known_folder(MUtils::OS::FOLDER_SYSTEM_DEF)), QStringList() << "/D" << tempFolderParts.first());
@@ -1780,7 +1780,7 @@ void MainWindow::encodeButtonClicked(void)
 				return;
 				break;
 			default:
-				QMessageBox::warning(this, tr("Low Diskspace"), NOBREAK(tr("You are proceeding with low diskspace. Problems might occur!")));
+				QMessageBox::warning(this, tr("Low Disk Space"), NOBREAK(tr("You are proceeding with low disk space. Problems might occur!")));
 				break;
 			}
 		}
@@ -2595,7 +2595,7 @@ void MainWindow::showDetailsButtonClicked(void)
 				continue;
 			}		
 
-			break; /*close dilalog now*/
+			break; /*close dialog now*/
 		}
 	}
 	else
@@ -3500,7 +3500,7 @@ void MainWindow::outputFolderMouseEventOccurred(QWidget *sender, QEvent *event)
 				}
 				else
 				{
-					MUTILS_THROW("Oups, this is not supposed to happen!");
+					MUTILS_THROW("Oops, this is not supposed to happen!");
 				}
 			}
 		}
@@ -3779,7 +3779,7 @@ void MainWindow::updateLameAlgoQuality(int value)
 }
 
 /*
- * Bitrate management endabled/disabled
+ * Bitrate management enabled/disabled
  */
 void MainWindow::bitrateManagementEnabledChanged(bool checked)
 {
@@ -4036,7 +4036,7 @@ void MainWindow::renameOutputEnabledChanged(const bool &checked)
 }
 
 /*
- * Rename output files patterm changed
+ * Rename output files pattern changed
  */
 void MainWindow::renameOutputPatternChanged(void)
 {
@@ -4046,7 +4046,7 @@ void MainWindow::renameOutputPatternChanged(void)
 }
 
 /*
- * Rename output files patterm changed
+ * Rename output files pattern changed
  */
 void MainWindow::renameOutputPatternChanged(const QString &text, const bool &silent)
 {
@@ -4440,7 +4440,7 @@ void MainWindow::overwriteModeChanged(int id)
 }
 
 /*
-* Keep original date/time opertion changed
+* Keep original date/time option changed
 */
 void MainWindow::keepOriginalDateTimeChanged(bool checked)
 {

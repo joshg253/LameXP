@@ -122,7 +122,7 @@ bool ProcessThread::init(void)
 		return true;
 	}
 
-	qWarning("[ProcessThread::init] Job %s already initialialized, skipping!", m_jobId.toString().toLatin1().constData());
+	qWarning("[ProcessThread::init] Job %s already initialized, skipping!", m_jobId.toString().toLatin1().constData());
 	return false;
 }
 
@@ -180,12 +180,12 @@ void ProcessThread::run()
 	catch(const std::exception &error)
 	{
 		MUTILS_PRINT_ERROR("\nGURU MEDITATION !!!\n\nException error:\n%s\n", error.what());
-		MUtils::OS::fatal_exit(L"Unhandeled C++ exception error, application will exit!");
+		MUtils::OS::fatal_exit(L"Unhandled C++ exception error, application will exit!");
 	}
 	catch(...)
 	{
 		MUTILS_PRINT_ERROR("\nGURU MEDITATION !!!\n\nUnknown exception error!\n");
-		MUtils::OS::fatal_exit(L"Unhandeled C++ exception error, application will exit!");
+		MUtils::OS::fatal_exit(L"Unhandled C++ exception error, application will exit!");
 	}
 }
 
@@ -622,7 +622,7 @@ bool ProcessThread::insertDownsampleFilter(const unsigned int *const supportedSa
 		{
 			if (dynamic_cast<ResampleFilter*>(m_filters.at(i)))
 			{
-				qWarning("Encoder requires downsampling, but user has already set resamling filter!");
+				qWarning("Encoder requires downsampling, but user has already set resampling filter!");
 				handleMessage("WARNING: Encoder may need resampling, but already using resample filter. Encoding *may* fail!\n");
 				targetSampleRate = targetBitDepth = 0;
 			}
@@ -666,7 +666,7 @@ bool ProcessThread::insertDownmixFilter(const unsigned int *const supportedChann
 			if (dynamic_cast<DownmixFilter*>(m_filters.at(i)))
 			{
 				qWarning("Encoder requires Stereo downmix, but user has already forced downmix!");
-				handleMessage("WARNING: Encoder may need downmixning, but already using downmixning filter. Encoding *may* fail!\n");
+				handleMessage("WARNING: Encoder may need downmixing, but already using downmixing filter. Encoding *may* fail!\n");
 				requiresDownmix = false;
 				break;
 			}

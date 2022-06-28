@@ -129,7 +129,7 @@ VorbisEncoder::VorbisEncoder(void)
 {
 	if(m_binary.isEmpty())
 	{
-		MUTILS_THROW("Error initializing Vorbis encoder. Tool 'oggenc2.exe' is not registred!");
+		MUTILS_THROW("Error initializing Vorbis encoder. Tool 'oggenc2.exe' is not registered!");
 	}
 
 	m_configBitrateMaximum = 0;

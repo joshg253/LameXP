@@ -62,12 +62,12 @@ void RAMObserverThread::run(void)
 	catch(const std::exception &error)
 	{
 		MUTILS_PRINT_ERROR("\nGURU MEDITATION !!!\n\nException error:\n%s\n", error.what());
-		MUtils::OS::fatal_exit(L"Unhandeled C++ exception error, application will exit!");
+		MUtils::OS::fatal_exit(L"Unhandled C++ exception error, application will exit!");
 	}
 	catch(...)
 	{
 		MUTILS_PRINT_ERROR("\nGURU MEDITATION !!!\n\nUnknown exception error!\n");
-		MUtils::OS::fatal_exit(L"Unhandeled C++ exception error, application will exit!");
+		MUtils::OS::fatal_exit(L"Unhandled C++ exception error, application will exit!");
 	}
 
 	while(m_semaphore.available()) m_semaphore.tryAcquire();

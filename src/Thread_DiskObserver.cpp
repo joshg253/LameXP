@@ -65,12 +65,12 @@ void DiskObserverThread::run(void)
 	catch(const std::exception &error)
 	{
 		MUTILS_PRINT_ERROR("\nGURU MEDITATION !!!\n\nException error:\n%s\n", error.what());
-		MUtils::OS::fatal_exit(L"Unhandeled C++ exception error, application will exit!");
+		MUtils::OS::fatal_exit(L"Unhandled C++ exception error, application will exit!");
 	}
 	catch(...)
 	{
 		MUTILS_PRINT_ERROR("\nGURU MEDITATION !!!\n\nUnknown exception error!\n");
-		MUtils::OS::fatal_exit(L"Unhandeled C++ exception error, application will exit!");
+		MUtils::OS::fatal_exit(L"Unhandled C++ exception error, application will exit!");
 	}
 
 	while(m_semaphore.available()) m_semaphore.tryAcquire();
@@ -88,8 +88,8 @@ void DiskObserverThread::observe(void)
 		{
 			if(freeSpace < minimumSpace)
 			{
-				qWarning("Free diskspace on '%s' dropped below %s MB, only %s MB free!", MUTILS_UTF8(m_path), MUTILS_UTF8(QString::number(minimumSpace / 1048576ui64)), MUTILS_UTF8(QString::number(freeSpace / 1048576ui64)));
-				emit messageLogged(tr("Low diskspace on drive '%1' detected (only %2 MB are free), problems can occur!").arg(QDir::toNativeSeparators(m_path), QString::number(freeSpace / 1048576ui64)), ProgressModel::SysMsg_Warning);
+				qWarning("Free disk space on '%s' dropped below %s MB, only %s MB free!", MUTILS_UTF8(m_path), MUTILS_UTF8(QString::number(minimumSpace / 1048576ui64)), MUTILS_UTF8(QString::number(freeSpace / 1048576ui64)));
+				emit messageLogged(tr("Low disk space on drive '%1' detected (only %2 MB are free), problems can occur!").arg(QDir::toNativeSeparators(m_path), QString::number(freeSpace / 1048576ui64)), ProgressModel::SysMsg_Warning);
 				minimumSpace = qMin(freeSpace, (minimumSpace >> 1));
 			}
 			if(freeSpace != previousSpace)

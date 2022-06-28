@@ -134,7 +134,7 @@ MACEncoder::MACEncoder(void)
 {
 	if (m_binary.isEmpty())
 	{
-		MUTILS_THROW("Error initializing MAC encoder. Tool 'mac.exe' is not registred!");
+		MUTILS_THROW("Error initializing MAC encoder. Tool 'mac.exe' is not registered!");
 	}
 }
 

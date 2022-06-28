@@ -131,7 +131,7 @@ AC3Encoder::AC3Encoder(void)
 {
 	if(m_binary.isEmpty())
 	{
-		MUTILS_THROW("Error initializing FLAC encoder. Tool 'aften.exe' is not registred!");
+		MUTILS_THROW("Error initializing FLAC encoder. Tool 'aften.exe' is not registered!");
 	}
 
 	m_configAudioCodingMode = 0;

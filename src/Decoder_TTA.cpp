@@ -40,7 +40,7 @@ TTADecoder::TTADecoder(void)
 {
 	if(m_binary.isEmpty())
 	{
-		MUTILS_THROW("Error initializing TTA decoder. Tool 'ttaenc.exe' is not registred!");
+		MUTILS_THROW("Error initializing TTA decoder. Tool 'ttaenc.exe' is not registered!");
 	}
 }
 

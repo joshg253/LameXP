@@ -39,7 +39,7 @@ FLACDecoder::FLACDecoder(void)
 {
 	if(m_binary.isEmpty())
 	{
-		MUTILS_THROW("Error initializing FLAC decoder. Tool 'flac.exe' is not registred!");
+		MUTILS_THROW("Error initializing FLAC decoder. Tool 'flac.exe' is not registered!");
 	}
 }
 

@@ -44,13 +44,13 @@ class QEventLoop;
 class SettingsModel;
 class WorkingBanner;
 
-//UIC forward declartion
+//UIC forward declaration
 namespace Ui
 {
 	class MainWindow;
 }
 
-//IPC forward declartion
+//IPC forward declaration
 namespace MUtils
 {
 	class IPCChannel;

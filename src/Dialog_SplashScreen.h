@@ -30,7 +30,7 @@ namespace MUtils
 	class Taskbar7;
 }
 
-//UIC forward declartion
+//UIC forward declaration
 namespace Ui
 {
 	class SplashScreen;

@@ -130,7 +130,7 @@ OpusEncoder::OpusEncoder(void)
 {
 	if(m_binary.isEmpty())
 	{
-		MUTILS_THROW("Error initializing Opus encoder. Tool 'opusenc.exe' is not registred!");
+		MUTILS_THROW("Error initializing Opus encoder. Tool 'opusenc.exe' is not registered!");
 	}
 
 	m_configOptimizeFor = 0;

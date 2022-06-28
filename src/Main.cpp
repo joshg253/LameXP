@@ -73,7 +73,7 @@ static void lamexp_print_logo(void)
 	qDebug("Note that this program is distributed with ABSOLUTELY NO WARRANTY.\n");
 
 	//Print library version
-	qDebug("This application is powerd by MUtils library v%u.%02u (%s, %s).\n", MUtils::Version::lib_version_major(), MUtils::Version::lib_version_minor(), MUTILS_UTF8(MUtils::Version::lib_build_date().toString(Qt::ISODate)), MUTILS_UTF8(MUtils::Version::lib_build_time().toString(Qt::ISODate)));
+	qDebug("This application is powered by MUtils library v%u.%02u (%s, %s).\n", MUtils::Version::lib_version_major(), MUtils::Version::lib_version_minor(), MUTILS_UTF8(MUtils::Version::lib_build_date().toString(Qt::ISODate)), MUTILS_UTF8(MUtils::Version::lib_build_time().toString(Qt::ISODate)));
 	
 	//Print warning, if this is a "debug" build
 	if(MUTILS_DEBUG)
@@ -211,7 +211,7 @@ static int lamexp_main(int &argc, char **argv)
 	//Uninstall?
 	if(arguments.contains("uninstall"))
 	{
-		qWarning("Un-install: Removing LameXP shell integration...");
+		qWarning("Uninstall: Removing LameXP shell integration...");
 		ShellIntegration::remove(false);
 		return EXIT_SUCCESS;
 	}
@@ -276,7 +276,7 @@ static int lamexp_main(int &argc, char **argv)
 	//Final clean-up
 	qDebug("Shutting down, please wait...\n");
 
-	//Shotdown computer
+	//Shut down computer
 	if(iShutdown > SHUTDOWN_FLAG_NONE)
 	{
 		if(!MUtils::OS::shutdown_computer(QApplication::applicationFilePath(), 12, true, (iShutdown == SHUTDOWN_FLAG_HIBERNATE)))
@@ -290,7 +290,7 @@ static int lamexp_main(int &argc, char **argv)
 }
 
 ///////////////////////////////////////////////////////////////////////////////
-// Applicaton entry point
+// Application entry point
 ///////////////////////////////////////////////////////////////////////////////
 
 int main(int argc, char* argv[])

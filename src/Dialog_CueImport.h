@@ -30,7 +30,7 @@ class AudioFileModel;
 class FileListModel;
 class SettingsModel;
 
-//UIC forward declartion
+//UIC forward declaration
 namespace Ui {
 	class CueSheetImport;
 }

@@ -186,12 +186,12 @@ void AnalyzeTask::run()
 	catch(const std::exception &error)
 	{
 		MUTILS_PRINT_ERROR("\nGURU MEDITATION !!!\n\nException error:\n%s\n", error.what());
-		MUtils::OS::fatal_exit(L"Unhandeled C++ exception error, application will exit!");
+		MUtils::OS::fatal_exit(L"Unhandled C++ exception error, application will exit!");
 	}
 	catch(...)
 	{
 		MUTILS_PRINT_ERROR("\nGURU MEDITATION !!!\n\nUnknown exception error!\n");
-		MUtils::OS::fatal_exit(L"Unhandeled C++ exception error, application will exit!");
+		MUtils::OS::fatal_exit(L"Unhandled C++ exception error, application will exit!");
 	}
 }
 
@@ -206,7 +206,7 @@ void AnalyzeTask::run_ex(void)
 
 	if(MUTILS_BOOLIFY(m_abortFlag))
 	{
-		qWarning("Operation cancelled by user!");
+		qWarning("Operation canceled by user!");
 		return;
 	}
 
@@ -252,7 +252,7 @@ void AnalyzeTask::run_ex(void)
 }
 
 ////////////////////////////////////////////////////////////
-// Privtae Functions
+// Private Functions
 ////////////////////////////////////////////////////////////
 
 const AudioFileModel& AnalyzeTask::analyzeFile(const QString &filePath, AudioFileModel &audioFile, int *const type)
@@ -374,7 +374,7 @@ const AudioFileModel& AnalyzeTask::parseMediaInfo(const QByteArray &data, AudioF
 			const QString identifier = xmlStream.readElementText(QXmlStreamReader::SkipChildElements).simplified();
 			if (!STRICMP(identifier, QLatin1String("MediaInfoLib")))
 			{
-				qWarning("Invalid library identiofier property: \"%s\"", MUTILS_UTF8(identifier));
+				qWarning("Invalid library identifier property: \"%s\"", MUTILS_UTF8(identifier));
 				return audioFile;
 			}
 			if (!versionLib.isEmpty())

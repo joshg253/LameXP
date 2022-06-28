@@ -263,7 +263,7 @@ static __forceinline void doValidateHash(HANDLE &fileHandle, const int &fileDesc
 		qWarning("\nFile checksum error:\n A = %s\n B = %s\n", expectedHash.constData(), hash.constData());
 		CLOSE_HANDLE(fileHandle);
 		QFile::remove(filePath);
-		MUTILS_THROW_FMT("File '%s' is corruputed, take care!", MUTILS_UTF8(QFileInfo(filePath).fileName()));
+		MUTILS_THROW_FMT("File '%s' is corrupted, take care!", MUTILS_UTF8(QFileInfo(filePath).fileName()));
 	}
 }
 

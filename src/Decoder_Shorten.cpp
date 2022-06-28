@@ -40,7 +40,7 @@ ShortenDecoder::ShortenDecoder(void)
 {
 	if(m_binary.isEmpty())
 	{
-		MUTILS_THROW("Error initializing Shorten decoder. Tool 'shorten.exe' is not registred!");
+		MUTILS_THROW("Error initializing Shorten decoder. Tool 'shorten.exe' is not registered!");
 	}
 }
 

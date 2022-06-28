@@ -39,7 +39,7 @@ MACDecoder::MACDecoder(void)
 {
 	if(m_binary.isEmpty())
 	{
-		MUTILS_THROW("Error initializing MAC decoder. Tool 'mac.exe' is not registred!");
+		MUTILS_THROW("Error initializing MAC decoder. Tool 'mac.exe' is not registered!");
 	}
 }
 
