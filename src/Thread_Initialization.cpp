@@ -99,6 +99,22 @@ static QList<QRegExp> createRegExpList(const char *const *const regExpList)
 	return result;
 }
 
+/* print selected CPU type*/
+#define _CPU_FRIENDLY_NAME(X,Y) case X: return #X " (" Y ")";
+static inline const char *cpuTypeFriendlyName(const unsigned int &cpuSupport)
+{
+	switch (cpuSupport)
+	{
+		_CPU_FRIENDLY_NAME(CPU_TYPE_X86_GEN, "i686")
+		_CPU_FRIENDLY_NAME(CPU_TYPE_X86_SSE, "i686 + SSE2")
+		_CPU_FRIENDLY_NAME(CPU_TYPE_X86_AVX, "i686 + AVX2")
+		_CPU_FRIENDLY_NAME(CPU_TYPE_X64_SSE, "x86_64")
+		_CPU_FRIENDLY_NAME(CPU_TYPE_X64_AVX, "x86_64 + AVX2")
+	default:
+		MUTILS_THROW("CPU support undefined!");
+	}
+}
+
 ////////////////////////////////////////////////////////////
 // BaseTask class
 ////////////////////////////////////////////////////////////
@@ -358,45 +374,30 @@ double InitializationThread::doInit(const size_t threadCount)
 	delay();
 
 	//CPU type selection
-	unsigned int cpuSupport = 0;
-	const bool haveSSE2 = (m_cpuFeatures.features & MUtils::CPUFetaures::FLAG_SSE) && (m_cpuFeatures.features & MUtils::CPUFetaures::FLAG_SSE2);
-	if(haveSSE2 && (m_cpuFeatures.vendor & MUtils::CPUFetaures::VENDOR_INTEL))
+	unsigned int cpuSupport = CPU_TYPE_X86_GEN;
+	if (m_cpuFeatures.x64 || ((m_cpuFeatures.features & MUtils::CPUFetaures::FLAG_SSE) && (m_cpuFeatures.features & MUtils::CPUFetaures::FLAG_SSE2)))
 	{
-		if (m_cpuFeatures.features & MUtils::CPUFetaures::FLAG_AVX)
+		cpuSupport = m_cpuFeatures.x64 ? CPU_TYPE_X64_SSE : CPU_TYPE_X86_SSE;
+		if ((m_cpuFeatures.features & MUtils::CPUFetaures::FLAG_AVX) && (m_cpuFeatures.features & MUtils::CPUFetaures::FLAG_AVX2))
 		{
-			cpuSupport = m_cpuFeatures.x64 ? CPU_TYPE_X64_AVX : CPU_TYPE_X86_AVX;
+			//Note: AVX is supported on Windows 7 SP1 or later
+			const MUtils::OS::Version::os_version_t &osVersion = MUtils::OS::os_version();
+			if ((osVersion >= MUtils::OS::Version::WINDOWS_WIN80) || ((osVersion >= MUtils::OS::Version::WINDOWS_WIN70) && (osVersion.versionSPack >= 1)))
+			{
+				cpuSupport = m_cpuFeatures.x64 ? CPU_TYPE_X64_AVX : CPU_TYPE_X86_AVX;
+			}
 		}
-		else
-		{
-			cpuSupport = m_cpuFeatures.x64 ? CPU_TYPE_X64_SSE : CPU_TYPE_X86_SSE;
-		}
-	}
-	else
-	{
-		cpuSupport = m_cpuFeatures.x64 ? CPU_TYPE_X64_GEN : CPU_TYPE_X86_GEN;
 	}
 
 	//Hack to disable x64 on Wine, as x64 binaries won't run under Wine (tested with Wine 1.4 under Ubuntu 12.04 x64)
-	if(cpuSupport & CPU_TYPE_X64_ALL)
+	if ((cpuSupport & CPU_TYPE_X64_SSX) && MUtils::OS::running_on_wine())
 	{
-		if(MUtils::OS::running_on_wine())
-		{
-			qWarning("Running under Wine on a 64-Bit system. Going to disable all x64 support!\n");
-			cpuSupport = (cpuSupport == CPU_TYPE_X64_SSE) ? CPU_TYPE_X86_SSE : CPU_TYPE_X86_GEN;
-		}
+		qWarning("Running under Wine on a 64-Bit system. Going to disable all x64 support!\n");
+		cpuSupport = CPU_TYPE_X86_SSE;
 	}
 
-	//Print selected CPU type
-	switch(cpuSupport)
-	{
-		PRINT_CPU_TYPE(CPU_TYPE_X86_GEN); break;
-		PRINT_CPU_TYPE(CPU_TYPE_X86_SSE); break;
-		PRINT_CPU_TYPE(CPU_TYPE_X86_AVX); break;
-		PRINT_CPU_TYPE(CPU_TYPE_X64_GEN); break;
-		PRINT_CPU_TYPE(CPU_TYPE_X64_SSE); break;
-		PRINT_CPU_TYPE(CPU_TYPE_X64_AVX); break;
-		default: MUTILS_THROW("CPU support undefined!");
-	}
+	//Print the selected CPU type
+	qDebug("Selected CPU type is: %s", cpuTypeFriendlyName(cpuSupport));
 
 	//Allocate queues
 	QQueue<QString> queueToolName;
@@ -761,30 +762,21 @@ void InitAacEncTask::initAacEncImpl(const char *const toolName, const char *cons
 
 void InitializationThread::selfTest(void)
 {
-	static const unsigned int CPU[7] = { CPU_TYPE_X86_GEN, CPU_TYPE_X86_SSE, CPU_TYPE_X86_AVX, CPU_TYPE_X64_GEN, CPU_TYPE_X64_SSE, CPU_TYPE_X64_AVX, 0U };
+	static const unsigned int CPU[7] = { CPU_TYPE_X86_GEN, CPU_TYPE_X86_SSE, CPU_TYPE_X86_AVX, CPU_TYPE_X64_SSE, CPU_TYPE_X64_AVX, 0U };
 
 	unsigned int count = 0U, expectedCount = UINT_MAX;
 	for(size_t k = 0U; CPU[k]; count = 0U, ++k)
 	{
+		const unsigned int cpuSupport = CPU[k];
 		qDebug("[SELF-TEST]");
-		switch(CPU[k])
-		{
-			PRINT_CPU_TYPE(CPU_TYPE_X86_GEN); break;
-			PRINT_CPU_TYPE(CPU_TYPE_X86_SSE); break;
-			PRINT_CPU_TYPE(CPU_TYPE_X86_AVX); break;
-			PRINT_CPU_TYPE(CPU_TYPE_X64_GEN); break;
-			PRINT_CPU_TYPE(CPU_TYPE_X64_SSE); break;
-			PRINT_CPU_TYPE(CPU_TYPE_X64_AVX); break;
-		default:
-			MUTILS_THROW("CPU support undefined!");
-		}
+		qDebug("Testing CPU type: %s", cpuTypeFriendlyName(cpuSupport));
 		for (int i = 0; g_lamexp_tools[i].pcName || g_lamexp_tools[i].pcHash || g_lamexp_tools[i].uiVersion; ++i)
 		{
 			if (g_lamexp_tools[i].pcName && g_lamexp_tools[i].pcHash && g_lamexp_tools[i].uiVersion)
 			{
 				const QString toolName = QString::fromLatin1(g_lamexp_tools[i].pcName);
 				const QByteArray expectedHash = QByteArray(g_lamexp_tools[i].pcHash);
-				if(g_lamexp_tools[i].uiCpuType & CPU[k])
+				if(g_lamexp_tools[i].uiCpuType & cpuSupport)
 				{
 					qDebug("%2u -> %s", ++count, MUTILS_UTF8(toolName));
 					QFile resource(QString(":/tools/%1").arg(toolName));
@@ -811,7 +803,7 @@ void InitializationThread::selfTest(void)
 		{
 			if (count != expectedCount)
 			{
-				qFatal("Tool count mismatch for CPU type %u. Should be %u, but got %u !!!", CPU[k], expectedCount, count);
+				qFatal("Tool count mismatch for CPU type %u. Should be %u, but got %u !!!", cpuSupport, expectedCount, count);
 			}
 		}
 		else

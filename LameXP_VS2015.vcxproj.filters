@@ -412,7 +412,7 @@
     <ClCompile Include="tmp\LameXP\QRC_Tools.dcaenc.cpp">
       <Filter>Generated Files\QRC</Filter>
     </ClCompile>
-    <ClCompile Include="tmp\LameXP\QRC_Tools.flac-x64-avx.cpp">
+    <ClCompile Include="tmp\LameXP\QRC_Tools.flac-x64-avx2.cpp">
       <Filter>Generated Files\QRC</Filter>
     </ClCompile>
     <ClCompile Include="tmp\LameXP\QRC_Tools.flac-x64-sse2.cpp">
@@ -436,13 +436,13 @@
     <ClCompile Include="tmp\LameXP\QRC_Tools.lame-x86-sse2.cpp">
       <Filter>Generated Files\QRC</Filter>
     </ClCompile>
-    <ClCompile Include="tmp\LameXP\QRC_Tools.mediaInfo-i686.cpp">
+    <ClCompile Include="tmp\LameXP\QRC_Tools.mediaInfo-x86-i686.cpp">
       <Filter>Generated Files\QRC</Filter>
     </ClCompile>
-    <ClCompile Include="tmp\LameXP\QRC_Tools.mediainfo-sse2.cpp">
+    <ClCompile Include="tmp\LameXP\QRC_Tools.mediainfo-x86-sse2.cpp">
       <Filter>Generated Files\QRC</Filter>
     </ClCompile>
-    <ClCompile Include="tmp\LameXP\QRC_Tools.mediainfo-x64.cpp">
+    <ClCompile Include="tmp\LameXP\QRC_Tools.mediainfo-x64-sse2.cpp">
       <Filter>Generated Files\QRC</Filter>
     </ClCompile>
     <ClCompile Include="tmp\LameXP\QRC_Tools.mpcdec.cpp">
@@ -520,7 +520,7 @@
     <ClCompile Include="tmp\LameXP\QRC_Tools.wvunpack-x86-sse2.cpp">
       <Filter>Generated Files\QRC</Filter>
     </ClCompile>
-    <ClCompile Include="tmp\LameXP\QRC_Tools.mac-x64-avx.cpp">
+    <ClCompile Include="tmp\LameXP\QRC_Tools.mac-x64-avx2.cpp">
       <Filter>Generated Files\QRC</Filter>
     </ClCompile>
     <ClCompile Include="tmp\LameXP\QRC_Tools.mac-x64-sse2.cpp">
@@ -565,10 +565,13 @@
     <ClCompile Include="tmp\LameXP\QRC_Tools.mpg123-x86-sse2.cpp">
       <Filter>Generated Files\QRC</Filter>
     </ClCompile>
-    <ClCompile Include="tmp\LameXP\QRC_Tools.mpg123-x64-avx.cpp">
+    <ClCompile Include="tmp\LameXP\QRC_Tools.mpg123-x64-avx2.cpp">
       <Filter>Generated Files\QRC</Filter>
     </ClCompile>
     <ClCompile Include="tmp\LameXP\QRC_Tools.verify.cpp">
+      <Filter>Generated Files\QRC</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\LameXP\QRC_Tools.mediainfo-x64-avx2.cpp">
       <Filter>Generated Files\QRC</Filter>
     </ClCompile>
   </ItemGroup>
@@ -914,7 +917,7 @@
     <CustomBuild Include="res\Tools.dcaenc.qrc">
       <Filter>Resources</Filter>
     </CustomBuild>
-    <CustomBuild Include="res\Tools.flac-x64-avx.qrc">
+    <CustomBuild Include="res\Tools.flac-x64-avx2.qrc">
       <Filter>Resources</Filter>
     </CustomBuild>
     <CustomBuild Include="res\Tools.flac-x64-sse2.qrc">
@@ -938,10 +941,10 @@
     <CustomBuild Include="res\Tools.lame-x86-sse2.qrc">
       <Filter>Resources</Filter>
     </CustomBuild>
-    <CustomBuild Include="res\Tools.mediainfo-sse2.qrc">
+    <CustomBuild Include="res\Tools.mediainfo-x86-sse2.qrc">
       <Filter>Resources</Filter>
     </CustomBuild>
-    <CustomBuild Include="res\Tools.mediainfo-x64.qrc">
+    <CustomBuild Include="res\Tools.mediainfo-x64-sse2.qrc">
       <Filter>Resources</Filter>
     </CustomBuild>
     <CustomBuild Include="res\Tools.mpcdec.qrc">
@@ -1019,7 +1022,7 @@
     <CustomBuild Include="res\Tools.wvunpack-x86-sse2.qrc">
       <Filter>Resources</Filter>
     </CustomBuild>
-    <CustomBuild Include="res\Tools.mac-x64-avx.qrc">
+    <CustomBuild Include="res\Tools.mac-x64-avx2.qrc">
       <Filter>Resources</Filter>
     </CustomBuild>
     <CustomBuild Include="res\Tools.mac-x64-sse2.qrc">
@@ -1046,7 +1049,7 @@
     <CustomBuild Include="res\Tools.refalac-sse2.qrc">
       <Filter>Resources</Filter>
     </CustomBuild>
-    <CustomBuild Include="res\Tools.mediainfo-i686.qrc">
+    <CustomBuild Include="res\Tools.mediainfo-x86-i686.qrc">
       <Filter>Resources</Filter>
     </CustomBuild>
     <CustomBuild Include="res\Tools.oggdec-sse2.qrc">
@@ -1070,10 +1073,13 @@
     <CustomBuild Include="res\Tools.mpg123-x86-i686.qrc">
       <Filter>Resources</Filter>
     </CustomBuild>
-    <CustomBuild Include="res\Tools.mpg123-x64-avx.qrc">
+    <CustomBuild Include="res\Tools.mpg123-x64-avx2.qrc">
       <Filter>Resources</Filter>
     </CustomBuild>
     <CustomBuild Include="res\Tools.verify.qrc">
+      <Filter>Resources</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\Tools.mediainfo-x64-avx2.qrc">
       <Filter>Resources</Filter>
     </CustomBuild>
   </ItemGroup>
