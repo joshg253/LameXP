@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////
 // LameXP - Audio Encoder Front-End
-// Copyright (C) 2004-2022 LoRd_MuldeR <MuldeR2@GMX.de>
+// Copyright (C) 2004-2023 LoRd_MuldeR <MuldeR2@GMX.de>
 //
 // This program is free software; you can redistribute it and/or modify
 // it under the terms of the GNU GENERAL PUBLIC LICENSE as published by
@@ -65,8 +65,8 @@ g_lamexp_tools[] =
 	{"fc4e38b11a0f52b68cca79aa2d71c02180b70eb0e592923dee4f0ccf766f1006642369b2178f6a61d1c2506446cc442d", CPU_TYPE_X86_SSX, "aften.sse2.exe", 8, ""},
 	{"b44b1c0e1a8f4633c9bc2e43d0a83ea5edc890e1cccc0054c812d0e64170e5292dc1dfd7430da61b73150831aa16e9c4", CPU_TYPE_X64_SSX, "aften.x64.exe",  8, ""},
 	{"4558728999a05f12fe88566e8308cba0ada200814c2a1bfe2507f49faf8f3994b0d52a829148f5c6321d24faa2718439", CPU_TYPE_ALL_ALL, "avs2wav.exe", 13, ""},
-	{"515c45cf9e7bb7d1e49dc079fab2586c1fe90ff2bed0d70c64a4ad6044e3f05cf5fa50f596c0ff6c5015dffb4a36cb31", CPU_TYPE_ALL_ALL, "curl.exe", 7860, ""},
-	{"7ad87c112438fd2c52ea174ab9a338e402a448e7e41e15f106400812f97a4d2ab47faad54848c1a7acc6d0981a2fb9c2", CPU_TYPE_ALL_ALL, "curl.crt", 7860, ""},
+	{"6d0ce33525a7e493121fedefc3483d7944bf08c39e8b91949f4a6ff8660fe46bf66433785ead15cbf992052e6e832339", CPU_TYPE_ALL_ALL, "curl.exe", 7870, ""},
+	{"6a3199492d4a01dbfd966be6af39f78323c648741404b615ced5d0f82679e164a3eeb9d22daafa9c5c5f97c7c63ec4bc", CPU_TYPE_ALL_ALL, "curl.crt", 7870, ""},
 	{"07834b1b8ecac2f3db79ad048005eca3a284cb759e15d399eb1a560a403122e20db5f08e60319759b8463aeef2410d02", CPU_TYPE_ALL_ALL, "dcaenc.exe", 20120419, ""},
 	{"5c4a5cdd708b5857bcb064558be81a2dfb16401e796b296f6eee7c63042acbeae12e1e2f1f3d0fd096eaf73201b54e10", CPU_TYPE_X86_GEN, "faad.i686.exe", 270, "" },
 	{"72447794cf411e1e4ce71facf5f60023f001d203894cf40185a0ee13e144e93d72ac99f2ed30a9168450ce5bf882f99f", CPU_TYPE_ALL_SSX, "faad.sse2.exe", 270, "" },
@@ -82,10 +82,10 @@ g_lamexp_tools[] =
 	{"5b4a8baa2e817ae4a4f58194f6b5f7b1d3b7a7473fd09a7a518bc0d994726b1d603b8d94e73c028e823312f29c1514f6", CPU_TYPE_X86_SSX, "mac.x86-sse2.exe", 892, ""},
 	{"42f03cddc33f984c61253e15d6803145977f14ed88dac1d1aa635abca52d8f29184516535ec51592fef824954457575d", CPU_TYPE_X64_SSE, "mac.x64-sse2.exe", 892, ""},
 	{"b70da98357932744179aff3220c04a8d17a50b8ceb4e9f23e3acf97216d543492e173e6233564d3876c67d511025fd67", CPU_TYPE_X64_AVX, "mac.x64-avx2.exe", 892, ""},
-	{"2c814166ab00b0a6f536658fbe373d6a1fe028c1c60a0215a06c3f05ccaf8b9c4b2d2e80b21a3c2525d0e24c4906e239", CPU_TYPE_X86_GEN, "mediainfo.x86-i686.exe", 22090, ""},
-	{"6f8394c8328a2e338ce608790e29778f830a6d2a293dccca2d6cd3882954bb5ba5dd18c79edfa22cdb0754b3b7eed42f", CPU_TYPE_X86_SSX, "mediainfo.x86-sse2.exe", 22090, ""},
-	{"6677f4e7700515691c9a531443baa15a84d89a63337f4d9a5dd3a461741bd0f1988d3eb60f739f20f53cdaff495571bd", CPU_TYPE_X64_SSE, "mediainfo.x64-sse2.exe", 22090, ""},
-	{"6c4aa055bed877359bf5aa83b0ca4f57b1c6b5415df8c8026d4c016991de825ef941485042abf0f63b3b26722176fe63", CPU_TYPE_X64_AVX, "mediainfo.x64-avx2.exe", 22090, ""},
+	{"ace8dc99c3d8350b153426f0298f3644c1fdf83a895935bfd997ec08553a74e08c38c465a4aa4ddb4a0ed103521dd12c", CPU_TYPE_X86_GEN, "mediainfo.x86-i686.exe", 23030, ""},
+	{"f15944e606caf7551e16a7e58af639afc870fc47d8960fa184a7dfbc59d81c422f44a801eaaa1790354d2e4b175091c6", CPU_TYPE_X86_SSX, "mediainfo.x86-sse2.exe", 23030, ""},
+	{"c732ab8e6301fd64ff8e7a5202b7d387e3f86cfcaf7fe62ad2bb0f347f82fe471f6440ba502b44b43f5bd2b3c4fa0dac", CPU_TYPE_X64_SSE, "mediainfo.x64-sse2.exe", 23030, ""},
+	{"12b8a1e79c0b03471454b4e84554a2b0628fdc51417138df7ca36492c2ebb1e02ba84ca300bb1e13e972770161ea49da", CPU_TYPE_X64_AVX, "mediainfo.x64-avx2.exe", 23030, ""},
 	{"7e6346a057634ff07b2e1f427035324f7f02100cc996425990f87f71d767fce4c7b101588c7d944ba49cb2d7e51c9bdb", CPU_TYPE_ALL_ALL, "mpcdec.exe", 475, ""},
 	{"6fd331a1010d0f368ba283b8ed1550d7ae2eb93fedf712f6510111ae014ce73fcc96f1038110cb92a271b2101fb32e2e", CPU_TYPE_X86_GEN, "mpg123.x86-i686.exe", 13002, ""},
 	{"80708087be72b6cc0ffa59adcceb477aaae7f15e09ee317b83ac9e6c8817c5b26a4aa8917eba73b683573f7da52c0916", CPU_TYPE_X86_SSX, "mpg123.x86-sse2.exe", 13002, ""},
